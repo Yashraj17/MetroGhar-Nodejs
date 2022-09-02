@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar navbar-brand" href="/usersTable">MetroGhar</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/usersTable" class="btn btn-danger mx-2">AllData</a></li>
+            </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+            <div class="col-9 mt-3 mx-auto">
+               <div class="card shadow-2">
+                <div class="card-body">
+
+                    <form action="/filter"  method="get">
+                            <div class="input-group">
+                            <input type="text" name="search" placeholder="Enter Name " class="form-control" size="50" >
+                            <input type="submit" name="find" class="btn btn-success border-0 rounded-0">
+                        </div>
+                        </form>
+                </div>
+               </div>
+                <table class="table table-bordered table-hover table-responsive table-stripped  mt-3 ">
+                    <thead>
+                        <tr class="bg-dark text-white">
+                            <th>Name</th>
+                            <th>Father</th>
+                            <th>Mother</th>
+                            <th >Email</th>
+                            <th>Contact</th>
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Pincode</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-bordered">
+
+                        <% data.forEach(val => { %>
+                            <tr>
+
+                                <td><%- val.name %></td>
+                                <td><%- val.fatherName %></td>
+                                <td><%- val.motherName %></td>
+                                <td><%- val.email %></td>
+                                <td><%- val.contact %></td>
+                                <td><%- val.address %></td>
+                                <td><%- val.gender %></td>
+                                <td><%- val.city %></td>
+                                <td><%- val.state %></td>
+                                <td><%- val.pincode %></td>
+                           
+                            </tr>
+                        <% }) %>
+                         <tr>
+                         </tr>
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+
+      </div>
+</body>
+</html>
